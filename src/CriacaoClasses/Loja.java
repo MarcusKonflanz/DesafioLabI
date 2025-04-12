@@ -4,11 +4,15 @@ public class Loja {
     private String nome;
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
+    public Endereco endereco;
+    public Data dataFundacao;
 
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) {
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
+        this.endereco = endereco;
+        this.dataFundacao = dataFundacao;
     }
     public Loja (String nome, int quantidadeFuncionarios) {
         this.nome = nome;
@@ -33,14 +37,27 @@ public class Loja {
     public void setSalarioBaseFuncionario(double salarioBaseFuncionario) {
         this.salarioBaseFuncionario = salarioBaseFuncionario;
     }
+    public Endereco getEndereco(){
+        return endereco;
+    }
+    public void setEndereco(Endereco endereco){
+        this.endereco = endereco;
+    }
+    public Data getDataFundacao(){
+        return dataFundacao;
+    }
+    public void setDataFundacao(Data dataFundacao) {
+        this.dataFundacao = dataFundacao;
+    }
 
     @Override
     public String toString() {
         return "Loja: {" +
                 "Nome: " + nome +
                 " Quantidade Funcionarios: " + quantidadeFuncionarios +
-                " Salario Base Funcionarios: " + salarioBaseFuncionario
-                + "}";
+                " Salario Base Funcionarios: " + salarioBaseFuncionario +
+                ", endereco: " + endereco +
+                ", data: " + dataFundacao + " }";
     }
     public double gastosComSalario(){
         double i = 0;
