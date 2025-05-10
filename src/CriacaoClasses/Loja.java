@@ -14,11 +14,12 @@ public class Loja {
         this.endereco = endereco;
         this.dataFundacao = dataFundacao;
     }
-    public Loja (String nome, int quantidadeFuncionarios) {
+    public Loja (String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = -1;
     }
+
     public String getNome() {
         return nome;
     }
@@ -43,6 +44,7 @@ public class Loja {
     public void setEndereco(Endereco endereco){
         this.endereco = endereco;
     }
+
     public Data getDataFundacao(){
         return dataFundacao;
     }

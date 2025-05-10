@@ -40,15 +40,23 @@ public class Produto {
                 + "Data validade: " + dataValidade
                 + "}";
     }
-
     public Boolean estaVencido(Data dataValidade){
         boolean estaVencido = false;
         LocalDate data = LocalDate.now();
         Data dataAtual = new Data(data.getDayOfMonth(), data.getMonthValue(), data.getYear());
 
-        if(dataValidade.ano >= dataAtual.ano || dataValidade.mes >= dataAtual.mes){
-            estaVencido = true;
-        }
+       if (dataAtual.getAno() > dataValidade.getAno())
+           return estaVencido;
+        else if (dataAtual.getAno() == dataValidade.getAno()){
+            if (dataAtual.getMes() > dataValidade.getMes())
+                return estaVencido;
+            else if (dataAtual.getMes() == dataValidade.getMes()) {
+                if (dataAtual.getDia() >= dataValidade.getDia())
+                    return estaVencido;
+                else
+                    estaVencido = true;
+            }
+       }
         return estaVencido;
     }
 }
