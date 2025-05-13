@@ -41,7 +41,7 @@ public class Produto {
                 + "}";
     }
     public Boolean estaVencido(Data dataValidade){
-        boolean estaVencido = false;
+        boolean estaVencido = true;
         LocalDate data = LocalDate.now();
         Data dataAtual = new Data(data.getDayOfMonth(), data.getMonthValue(), data.getYear());
 
@@ -54,7 +54,7 @@ public class Produto {
                 if (dataAtual.getDia() >= dataValidade.getDia())
                     return estaVencido;
                 else
-                    estaVencido = true;
+                    return estaVencido;
             }
        }
         return estaVencido;
