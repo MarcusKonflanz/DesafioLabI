@@ -5,6 +5,7 @@ public class Principal {
         int dia = 0;
         int mes = 0;
         int ano = 0;
+        int tamanhoEstoque = 0;
 
         do {
             System.out.println("MENU: ");
@@ -28,10 +29,11 @@ public class Principal {
                     dia = Teclado.leInt("Informe o dia de criacao da loja: ");
                     mes = Teclado.leInt("Informe o mes de criacao da loja:: ");
                     ano = Teclado.leInt("Informe o ano de criacao da loja:: ");
+                    tamanhoEstoque = Teclado.leInt("Informe o tamanho do estoque da loja: ");
 
                     Data dataFundacao = new Data(dia, mes, ano);
                     Endereco endereco = new Endereco(nomeRua, cidade, estado, pais, cep, numero, complemento);
-                    Loja loja = new Loja(nomeLoja, quantidadeFuncionario, salarioBase, endereco, dataFundacao);
+                    Loja loja = new Loja(nomeLoja, quantidadeFuncionario, salarioBase, endereco, dataFundacao, tamanhoEstoque);
 
                     System.out.println(loja);
                     break;
